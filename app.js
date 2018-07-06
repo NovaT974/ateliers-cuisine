@@ -7,7 +7,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/ateliers')
+mongoose.connect('mongodb://localhost/cuisine')
   .then(() =>  console.log('connection succesful'))
 
 var indexRouter = require('./routes/index');
