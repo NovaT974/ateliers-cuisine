@@ -13,7 +13,7 @@ atelierController.create = function(req, res){
 
 //enregistrement des machines
 atelierController.save = function(req, res){
-    var atelier = new atelier(req.body);
+    var atelier = new Atelier(req.body);
 
     atelier.save(function(err){
         if(err){
@@ -22,6 +22,18 @@ atelierController.save = function(req, res){
         } else{
             console.log("creation atelier OK");
             res.redirect("/ateliers/show/" + atelier._id);
+        } 
+    });
+};
+
+
+//Affiche 1 utilisateur par son id
+atelierController.show = function(req, res) {
+    Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/atelier/show",{atelier:atelier});
         } 
     });
 };
