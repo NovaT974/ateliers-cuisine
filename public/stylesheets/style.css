@@ -1,8 +1,59 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Verdana, sans-serif;
+  font-size: 17px;
+  color: #444;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+/*=============================
+      HEADER
+==============================*/
+.logo {
+  width: 80px;
+  height: 80px;
 }
 
-a {
-  color: #00B7FF;
+header {
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(191,187,191,1);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(191,187,191,1);
+  box-shadow: 0px 3px 5px 0px rgba(191,187,191,1);
 }
+
+.carousel-inner .carousel-item {
+  height: 400px;
+}
+.bg_img{
+  
+    background:linear-gradient(
+    rgba(255, 255, 255, 0.7), 
+    rgba(255, 255, 255, 0.7)
+    ),url(/img/img-1.jpg);
+    background-size: cover;
+}
+
+.img_slide {
+  width: 200px;
+  height: 200px;
+}
+
+.title_page {
+  font-family: 'Roboto', sans-serif;
+}
+
+.icon_title {
+  color: #f3671f;
+  border: 4px solid #d05c62;
+  padding: 10px;
+}
+
+.img_ateliers {
+  width: 100%;
+  height: 150px;
+}
+
+.link_atelier {
+  color: #444;
+}
+
