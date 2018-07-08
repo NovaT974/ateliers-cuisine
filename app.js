@@ -32,6 +32,10 @@ app.use('/users', usersRouter);
 var ateliers = require("./routes/ateliers");
 app.use("/ateliers", ateliers);
 
+// routes profiles cuisinier
+var cuisiniersSession = require("./routes/cuisiniersSession");
+app.use("/cuisiniersSession", cuisiniersSession);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
