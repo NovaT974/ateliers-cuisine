@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -14,6 +17,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+var db = mongoose.connection;
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +32,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+  mongooseConnection: db
+  })
+}));
 
 //routes Ateliers
 var ateliers = require("./routes/ateliers");

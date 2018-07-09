@@ -12,5 +12,8 @@ router.get("/ajoutcuisinier", cuisinier.create);
 //creer un login
 router.post("/save", cuisinier.save);
 
+// route vers  fonction authentification
+router.post('/auth', cuisinier.auth);
+
 //export du module router
 module.exports = router;
