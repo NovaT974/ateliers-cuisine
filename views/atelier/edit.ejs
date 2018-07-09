@@ -1,28 +1,78 @@
-<a href="/ateliers">Voir liste ateliers</a>
+<% include ../partials/head.ejs %>
 
-
-<form action="/ateliers/update/<%= atelier._id %>" method="POST">
-
-    titre atelier:
-    <input type="text" name="titre" value="<%= atelier.titre %>" placeholder="titre" />
-    <br> Description:
-    <input type="text" name="description" value="<%= atelier.description %>" placeholder="description" />
-    <br> Date:
-    <input type="date" name="date" value="<%= atelier.date %>" placeholder="date" />
-    <br> Horaire:
-    <input type="text" name="horaire" value="<%= atelier.horaire %>" placeholder="horaire" />
-    <br> Durée:
-    <input type="text" name="duree" value="<%= atelier.duree %>" placeholder="duree" />
-    <br> Place disponible:
-    <input type="number" name="place_disponible" value="<%= atelier.place_disponible %>" placeholder="place_disponible" />
-    <br> Place reservée:
-    <input type="number" name="place_reserve" value="<%= atelier.place_reserve %>" placeholder="place_reserve" />
-    <br> Prix:
-    <input type="number" name="prix" value="<%= atelier.prix %>" placeholder="prix" />
-    <br> image:
-    <input type="text" name="image" value="<%= atelier.image %>" placeholder="image" />
-
-
-    <input type="submit" value="Mettre à jour" />
-
-</form>
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5">
+        <div class="container bg-white">
+            <section class="row animated fadeIn">
+                <div class="col-md-6 mx-auto mt-5 mb-5">
+                    <h1 class="title_page"> 
+                        <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                        <img class="d-block img_title" src="/img/img-title.png" alt="">
+                        Éditer un atelier
+                    </h1>
+                <!--  <hr> -->
+                </div>    
+            </section>
+        </div>
+        <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+                <div class="row mb-5 animated-1 fadeIn">
+                    <div class="col-sm-12 col-md-12 mx-auto mt-5 mb-5">
+                        <div class="col-sm-12 col-md-12">
+                            <a class="btn btn-primary btn_pink border-0 text-uppercase" href="/ateliers">Voir la liste des ateliers</a>
+                        </div>
+                        <form action="/ateliers/update/<%= atelier._id %>" method="POST" class="mt-5">
+                            <div class="col-sm-12 col-md-12 form-group">
+                                <label>Titre atelier:</label>
+                                <input class="form-control" type="text" name="titre" value="<%= atelier.titre %>" placeholder="titre" />
+                            </div>
+                            <div class="col-sm-12 col-md-12 form-group">    
+                                <label> Description: </label>
+                                <input class="form-control" type="text" name="description" value="<%= atelier.description %>" placeholder="description" />
+                            </div>
+                            <div class="row col-sm-12 col-md-12">
+                                <div class=" col-md-6 col-sm-12 form-group">    
+                                    <label> Date: </label>
+                                    <input class="form-control" type="date" name="date" value="<%= atelier.date %>" placeholder="date" />
+                                </div>    
+                                <div class="col-md-6 col-sm-12 form-group">    
+                                    <label> Horaire:</label>
+                                    <input class="form-control" type="text" name="horaire" value="<%= atelier.horaire %>" placeholder="horaire" />
+                                </div>
+                            </div>
+                            <div class="row col-sm-12 col-md-12">
+                                <div class=" col-md-6 col-sm-12 form-group">    
+                                    <label> Durée:</label>
+                                    <input class="form-control" type="text" name="duree" value="<%= atelier.duree %>" placeholder="duree" />
+                                </div> 
+                                <div class="col-md-6 col-sm-12 form-group">    
+                                    <label> Places disponibles: </label>
+                                    <input class="form-control" type="number" name="place_disponible" value="<%= atelier.place_disponible %>" placeholder="place_disponible" />
+                                </div>   
+                            </div>
+                            <div class="row col-sm-12 col-md-12">
+                                <div class=" col-md-6 col-sm-12 form-group">    
+                                    <label> Places reservées: </label>
+                                    <input class="form-control" type="number" name="place_reserve" value="<%= atelier.place_reserve %>" placeholder="place_reserve" />
+                                </div>   
+                                <div class=" col-md-6 col-sm-12 form-group">  
+                                    <label> Prix: </label>
+                                    <input class="form-control" type="number" name="prix" value="<%= atelier.prix %>" placeholder="prix" />
+                                </div>     
+                            </div> 
+                            <div class="row col-sm-12 col-md-12">
+                                <div class=" col-md-6 col-sm-12 form-group">  
+                                    <label> Image: </label>
+                                    <input class="form-control" type="file" name="image" value="<%= atelier.image %>" placeholder="image" />
+                                </div> 
+                                <div class=" col-md-6 col-sm-12 form-group"> 
+                                    <input class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" value="Mettre à jour" />
+                                </div>          
+                            </div>    
+                            
+                        </form>
+                </div> 
+            </div>       
+        </section>                
+    </main>
+<% include ../partials/footer.ejs %>                   
