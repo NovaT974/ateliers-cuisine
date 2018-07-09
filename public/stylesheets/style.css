@@ -7,12 +7,32 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
+
+.orange {
+  color: #f3671f;
+}
+
+.pink {
+  color: #d05c62;
+}
+
+.bg_pink {
+  background: #d05c62;
+}
+.bg_orange {
+  background: #f3671f;
+}
+
 /*=============================
       HEADER
 ==============================*/
 .logo {
   width: 80px;
   height: 80px;
+}
+
+.nav-link {
+  font-size: 15px;
 }
 
 header {
@@ -26,20 +46,43 @@ header {
 }
 .bg_img{
   
-    background:linear-gradient(
+   /* background:linear-gradient(
     rgba(255, 255, 255, 0.7), 
     rgba(255, 255, 255, 0.7)
-    ),url(/img/img-1.jpg);
+    ),url(/img/img-1.jpg);*/
+    background: url(/img/atelier.jpg);
     background-size: cover;
+    background-position: center center;
 }
-
-.img_slide {
+.bg_opacity {
+  background: rgba(255, 255, 255, 0.7);
+}
+/*.img_slide {
   width: 200px;
   height: 200px;
+}*/
+.title_slide {
+  font-size: 48px;
+  font-family: 'Roboto', sans-serif;
 }
 
+.btn_pink {
+  background: #d05c62;
+}
+
+.btn_pink:hover {
+  background: #f3671f;
+}
 .title_page {
   font-family: 'Roboto', sans-serif;
+}
+
+.img_title {
+  width: 65px;
+  height: 65px;
+  float: left;
+  position: relative;
+  bottom: 8px;
 }
 
 .icon_title {
@@ -50,10 +93,92 @@ header {
 
 .img_ateliers {
   width: 100%;
-  height: 150px;
+  height: 150px
 }
 
 .link_atelier {
   color: #444;
 }
 
+
+/*=========================
+  Animation page d'accueil
+============================*/  
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated-1 {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+/*============================
+      PAGE ATELIER
+=============================*/
+
+/* atelier individuel */
+.bg_page {
+  background: #eee;
+}
+
+/* page liste atelier */
+.btn_orange {
+  background: #f3671f;
+}
+
+.btn_orange:hover {
+  background: #d05c62;
+}
+
+
+/*=========================
+      Responsive
+==========================*/
+
+@media screen and (max-width: 640px) {
+  h3 {
+    font-size: 25px;
+  }
+  .title_page {
+    font-size: 30px;
+  }
+}
