@@ -163,6 +163,7 @@ header {
 /* page liste atelier */
 .btn_orange {
   background: #f3671f;
+  width: 150px;
 }
 
 .btn_orange:hover {
@@ -175,10 +176,17 @@ header {
 ==========================*/
 
 @media screen and (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
   h3 {
-    font-size: 25px;
+    font-size: 23px;
   }
   .title_page {
-    font-size: 30px;
+    font-size: 28px;
+  }
+  .formulaire {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
   }
 }
