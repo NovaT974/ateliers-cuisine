@@ -18,4 +18,9 @@ router.get("/edit/:id", atelier.edit);
 //voir un machine par son id
 router.get("/show/:id", atelier.show);
 
+
+//edit update.  /!\ cest un POST 
+router.post("/update/:id", atelier.update);
+
+
 module.exports = router;
