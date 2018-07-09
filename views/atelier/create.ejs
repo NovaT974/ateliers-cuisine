@@ -1,30 +1,76 @@
-<form action="/ateliers/save" method="POST">
-    Titre
-    <br>
-    <input type="text" name="titre" >
-    <br> Description
-    <br>
-    <input type="text" name="description" >
-    <br> Date
-    <br>
-    <input type="date" name="lastname" >
-    <br> Horaire
-    <br>
-    <input type="text" name="horaire" >
-    <br> Duree
-    <br>
-    <input type="number" name="duree" >
-    <br> Place disponible
-    <br>
-    <input type="number" name="place_disponible" >
-    <br> Place_reserve
-    <br>
-    <input type="number" name="place_reserve" >
-    <br> Prix
-    <br>
-    <input type="number" name="prix" >
-    <br> Image
-    <br>
-    <input type="text" name="image" >
-    <input type="submit" value="Submit">
-</form>
+
+<% include ../partials/head.ejs %>
+
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5">
+        <div class="container bg-white">
+            <section class="row animated fadeIn">
+                <div class="col-md-6 mx-auto mt-5 mb-5">
+                    <h1 class="title_page"> 
+                        <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                        <img class="d-block img_title" src="/img/img-title.png" alt="">
+                       Créer un atelier
+                    </h1>
+                <!--  <hr> -->
+                </div>    
+            </section>
+        </div>
+        <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+            <div class="row mb-5 animated-1 fadeIn">
+                <div class="col-sm-12 col-md-12 mx-auto mt-5 mb-5">
+                    <form action="/ateliers/save" method="POST">
+                        <div class="form-group">
+                            <label>Titre :</label>
+                            <input class="form-control" type="text" name="titre" >
+                        </div>
+                        <div class="form-group"></div>
+                            <label>Description :</label> 
+                            <input class="form-control" type="text" name="description" >
+                        </div> 
+                        <div class="row col-sm-12 col-md-12">
+                            <div class=" col-md-6 col-sm-12 form-group">
+                                <label>Date :</label>
+                                <input class="form-control" type="date" name="lastname" >
+                            </div>   
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label>Horaire :</label> 
+                                <input class="form-control" type="time" name="horaire" >
+                            </div>
+                        </div>
+                        <div class="row col-sm-12 col-md-12">
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label>Duree :</label>
+                                <input class="form-control" type="number" name="duree" >
+                            </div>
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label>Place disponible :</label>
+                                <input class="form-control" type="number" name="place_disponible" >
+                            </div> 
+                        </div>   
+                        <div class="row col-sm-12 col-md-12">    
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <label>Places reservées :</label>
+                                <input class="form-control" type="number" name="place_reserve" >
+                            </div>
+                            <div class="col-md-6 col-sm-12 form-group">    
+                                <label> Prix :</label>
+                                <input class="form-control" type="number" name="prix" >
+                            </div>
+                        </div>  
+                        <div class="row col-sm-12 col-md-12">      
+                            <div class="col-md-6 col-sm-4 form-group"> 
+                                <label>Télécharger une image :</label> 
+                                <input class="form-control border-0" type="file" name="image" >
+                            </div>
+                            <div class="col-md-6 col-sm-12 form-group">     
+                                <input class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" value="Créer">
+                            </div>
+                        </div>        
+                    </form>
+                </div> 
+            </div>       
+        </section>
+    </main>    
+
+<% include ../partials/footer.ejs %>           
