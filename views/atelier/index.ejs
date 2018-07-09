@@ -1,0 +1,32 @@
+<% for (var i = 0; i<ateliers.length; i++) { %>
+    <p>titre :
+        <%= ateliers[i].titre %>
+    </p>
+    <p>description :
+        <%= ateliers[i].description %>
+    </p>
+    <p>date :
+        <%= ateliers[i].date %>
+    </p>
+    <p>horaire :
+        <%= ateliers[i].horaire %>
+    </p>
+    <p>duree :
+        <%= ateliers[i].duree %> min</p>
+    <p>place_disponible :
+        <%= ateliers[i].place_disponible %>
+    </p>
+    <p>place_reserve :
+        <%= ateliers[i].place_reserve %>
+    </p>
+    <p>prix:
+        <%= ateliers[i].prix %>
+    </p>
+    <p>image:
+        <%= ateliers[i].image %>
+    </p>
+ 
+
+<a href="/ateliers/edit/<%=ateliers[i]._id %>">Editer</a>
+
+<% } %>
