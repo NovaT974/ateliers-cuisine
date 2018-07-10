@@ -1,27 +1,40 @@
-<html>
+<% include ../partials/head.ejs %>
 
-<body>
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5">
+      <div class="container bg-white">
+          <section class="row animated fadeIn">
+              <div class="col-md-6 mx-auto mt-5 mb-5">
+                  <h1 class="title_page"> 
+                      <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                      <img class="d-block img_title" src="/img/img-title.png" alt="">
+                      Se connecter
+                  </h1>
+              <!--  <hr> -->
+              </div> 
+          </section>
+      </div>
+      <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+        <div class="col-md-8 mx-auto">
+          <a class="btn btn-primary btn_pink border-0 mb-5" href="/cuisiniersSession/ajoutcuisinier">Inscription cuisinier</a>
+        </div>  
+        <div class="row mb-5 border animated-1 fadeIn">
+            <div class="col-sm-12 col-md-8 mx-auto mt-5 mb-5">
+              <form action="/cuisiniersSession/auth" method="POST">
+                <div class="form-group">
+                  <label for="Username">Nom:</label>
+                  <input class="form-control" type="text" class="form-control" name="Username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Mot de passe :</label>
+                  <input class="form-control" type="password" class="form-control" name="Password">
+                </div>
+                <button class="btn btn-primary btn_orange border-0" type="submit" class="btn btn-primary">Se connecter</button>
+              </form> 
+            </div> 
+        </div>       
+      </section>
+  </main>    
 
-    <h1>salut
-
-    </h1>
-    <a href="/cuisiniersSession/ajoutcuisinier">inscription cuisinier !</a>
-
-    <!-- formulaire de test à reprendre avec nos éléments -->
-    <form class= "col-lg-4 m-4" action="/cuisiniersSession/auth" method="POST">
-        <h1>Se connecter</h1>
-        <div class="form-group">
-          <label for="Username">Nom:</label>
-          <input type="text" class="form-control" name="Username">
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" class="form-control" name="Password">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form> 
-
-
-</body>
-
-</html>
+<% include ../partials/footer.ejs %>      
