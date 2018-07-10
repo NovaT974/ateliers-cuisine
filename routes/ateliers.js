@@ -3,8 +3,8 @@ var router = express.Router();
 
 var atelier = require("../controllers/AtelierController");
 
-//recuperer les machines
-router.get("/", atelier.list);
+//recuperer les ateliers
+// router.get("/", atelier.list);
 
 //recuperer les ateliers active
 router.get("/admin", atelier.listAdmins);
