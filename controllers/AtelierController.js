@@ -16,6 +16,18 @@ atelierController.list = function (req, res) {
     });
 };
 
+//Liste les ateliers activé dans la page admins
+atelierController.listtest = function (req, res) {
+    Atelier.find({}).exec(function (err, ateliers) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+            console.log(ateliers)
+            res.render("../views/atelier/admin", { ateliers: ateliers });
+        }
+    });
+};
+
 //redirection à la page de creation d'un atelier'
 atelierController.create = function(req, res){
     res.render("../views/atelier/create");

@@ -15,10 +15,12 @@
                     </section>
                 </div>
 
-                <section class="container bg-white p-5">
-                    <div class="row mb-5 animated-1 fadeIn">
-                        <% for (var i = 0; i<ateliers.length; i++) { %>
-                            <% if (ateliers[i].active == "on") { %>
+                <%= console.log("/////////////////////////") %>
+                    <section class="container bg-white p-5">
+                        <div class="row mb-5 animated-1 fadeIn">
+                            <% for (var i = 0; i<ateliers.length; i++) { %>
+
+
 
                                 <article class="col-md-3 mb-5 pb-3">
                                     <img src="/img/<%= ateliers[i].image %>" class="w-100">
@@ -55,9 +57,9 @@
                                     </p>
                                     <a class="btn btn-primary btn_orange border-0" href="/ateliers/edit/<%=ateliers[i]._id %>">Editer</a>
                                 </article>
+
                                 <% } %>
-                                    <% } %>
-                    </div>
-                </section>
+                        </div>
+                    </section>
             </main>
             <% include ../partials/footer.ejs %>
