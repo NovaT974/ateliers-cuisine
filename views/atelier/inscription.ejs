@@ -1,6 +1,5 @@
 <% include ../partials/head.ejs %>
 
-<<<<<<< HEAD
 <body class="bg_page">
     <% include ../partials/header.ejs %>
     <main class="container mt-5 bg-white">
@@ -25,18 +24,41 @@
                     <h2 class="title_page orange">
                         <%= atelier.titre %>
                     </h2>
-                    <p>
-                            <b>Description : </b>
-                            <%= atelier.description %>
-                        </p>
-                        <p>
-                            <b>Horaire : </b>
-                            <%= atelier.horaire %>
-                        </p>
-                        <p>
-                            <b>Place disponible : </b>
-                            <%= atelier.place_disponible %>
-                        </p>
+                <div class="mb-1">
+                    <h4>
+                        <i class="far fa-clock pink"></i>
+                        Horaire : <%= atelier.horaire %>
+                    </h4>
+                    <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="far fa-hourglass pink"></i>
+                            Durée : <%= atelier.duree %>
+                        </h4>
+                        <hr>
+                    </div>    
+                    <div class="mb-1">
+                        <h4>
+                            <i class="fas fa-tag pink"></i>
+                            Places disponibles : <%= atelier.place_disponible %>
+                        </h4>
+                        <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="far fa-check-square pink"></i>
+                            Places réservées : <%= atelier.place_reserve %>
+                        </h4>
+                        <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="fas fa-money-bill pink"></i>
+                            Prix: <%= atelier.prix %>
+                        </h4>
+                        <hr>
+                    </div> 
                 </div>
             </div>                
         </section>
@@ -63,25 +85,3 @@
           </section>        
     </main>    
 <% include ../partials/footer.ejs %>          
-=======
-
-
-<form action="/ateliers/saveInscription" method="POST">
-    Nom:
-    <br>
-    <input type="text" name="firstname">
-    <br> Prenom:
-    <br>
-    <input type="text" name="lastname">
-    <br> Mail:
-    <br>
-    <input type="email" name="email">
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-
-
-<!-- Code visuel à adapter une fois que le décompte fonctionne -->
-
->>>>>>> upstream/master
