@@ -27,7 +27,8 @@
                                 </div>
                                 <div class="col-sm-12 col-md-12 form-group">
                                     <label> Description: </label>
-                                    <input class="form-control" type="text" name="description" value="<%= atelier.description %>" placeholder="description" />
+                                    <!--<input class="form-control" type="text" name="description" value="<%= atelier.description %>" placeholder="description" />-->
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" value="<%= atelier.description %>" placeholder="Description"></textarea>
                                 </div>
                                 <div class="row col-sm-12 col-md-12">
                                     <div class=" col-md-6 col-sm-12 form-group">
@@ -66,9 +67,10 @@
                                         <label> Image: </label>
                                         <input class="form-control" type="file" name="image" value="<%= atelier.image %>" placeholder="image" />
                                     </div>
-
-                                    Active:
-                                    <input class="form-control" type="checkbox" name="active" placeholder="active" />
+                                    <div class=" col-md-6 col-sm-12 form-group">
+                                        Active:
+                                        <input class="check-box" type="checkbox" name="active" placeholder="active" />
+                                    </div>    
                                 </div>
                                 <div class=" col-md-6 col-sm-12 form-group">
                                     <input class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" value="Mettre à jour" />

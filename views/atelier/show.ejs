@@ -1,3 +1,83 @@
-collection alimenté
+<% include ../partials/head.ejs %>
 
-<a href="/ateliers">retour a la page atelier</a>
+<body>
+    <% include ../partials/header.ejs %>
+    <main>
+        <div class="container-fluid bg_page padding_perso">
+            <section class="container bg-white">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="/img/<%= atelier.image %>" class="w-100 mt-3">
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="mt-3 pink">Atelier
+                            <%= atelier.titre %>
+                            <hr>
+                        </h3>
+                        <p><b>Date :</b>
+                            <%= atelier.date %>
+                        </p> <!--Btn a revoir-->
+                        <button class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" class="btn btn-primary">S'inscrire</button>   
+                    </div>
+                </div>
+            </section>
+        </div>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 mt-5">
+                    <h3 class="orange">Description :</h3>
+                    <%= atelier.description %>
+                </div>
+                <div class="col-md-4 col-sm-12 mt-5">
+                    <div class="mb-3">
+                        <h4>
+                            <i class="far fa-clock pink"></i>
+                            Horaire :
+                        </h4>
+                        <%= atelier.horaire %>
+                        <hr>
+                    </div>
+                    <div class="mb-3">
+                        <h4>
+                            <i class="far fa-hourglass pink"></i>
+                            durée :
+                        </h4>
+                        <%= atelier.duree %>
+                        <hr>
+                    </div>    
+                    <div class="mb-3">
+                        <h4>
+                            <i class="fas fa-tag pink"></i>
+                            Places disponibles :
+                        </h4>
+                        <%= atelier.place_disponible %>
+                        <hr>
+                    </div>
+                    <div class="mb-3">
+                        <h4>
+                            <i class="far fa-check-square pink"></i>
+                            Places réservées :
+                        </h4>
+                        <%= atelier.place_reserve %>
+                        <hr>
+                    </div>
+                    <div class="mb-3">
+                        <h4>
+                            <i class="fas fa-money-bill pink"></i>
+                            Prix:
+                        </h4>
+                        <%= atelier.prix %>
+                        <hr>
+                    </div> 
+                </div>
+            </div> 
+            <div class="col-md-12">
+                <a class="btn btn-primary btn_pink border-0" href="/ateliers">Tous les ateliers</a>
+            </div>  
+        </section>
+    </main>                    
+    <% include ../partials/footer.ejs %>                     
+                    
+                    
+                    
+                
