@@ -1,0 +1,33 @@
+<p>
+    <b>Titre : </b>
+    <%= atelier.titre %>
+</p>
+<p>
+    <b>Description : </b>
+    <%= atelier.description %>
+</p>
+<p>
+    <b>Horaire : </b>
+    <%= atelier.horaire %>
+</p>
+<p>
+    <b>Place disponible : </b>
+    <%= atelier.place_disponible %>
+</p>
+
+
+
+<form action="/ateliers/saveInscription" method="POST">
+    Nom:
+    <br>
+    <input type="text" name="firstname">
+    <br> Prenom:
+    <br>
+    <input type="text" name="lastname">
+    <br> Mail:
+    <br>
+    <input type="email" name="email">
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+</form>

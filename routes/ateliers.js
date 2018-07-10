@@ -3,8 +3,11 @@ var router = express.Router();
 
 var atelier = require("../controllers/AtelierController");
 
-//recuperer les machines
-router.get("/", atelier.list);
+//recuperer les ateliers
+// router.get("/", atelier.list);
+
+//recuperer les ateliers active
+router.get("/admin", atelier.listAdmins);
 
 //cree un atelier
 router.get("/create", atelier.create);
@@ -14,6 +17,9 @@ router.post("/save", atelier.save);
 
 //editer une atelier
 router.get("/edit/:id", atelier.edit);
+
+//editer une inscription pour un atelier
+router.get("/inscription/:id", atelier.inscription);
 
 //voir un machine par son id
 router.get("/show/:id", atelier.show);

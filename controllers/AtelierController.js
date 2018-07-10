@@ -4,14 +4,40 @@ var Atelier = require("../models/Atelier");
 
 var atelierController = {};
 
-//Liste les ateliers
-atelierController.list = function (req, res) {
+//Liste les ateliers activé
+// atelierController.list = function (req, res) {
+//     Atelier.find({}).exec(function (err, ateliers) {
+//         if (err) {
+//             console.log('Error : ', err);
+//         } else {
+//             console.log(ateliers)
+//             res.render("../views/atelier/index", { ateliers: ateliers });
+//         }
+//     });
+// };
+
+//Liste les ateliers activé
+atelierController.list = function (req, res, next) {
+    Atelier.find({}).exec(function (err, ateliers) {
+        if (err) {
+            console.log('Error : ', err);
+        } else {
+           // console.log(ateliers)
+            req.body.ateliers = ateliers
+           // console.log("req.body.ateliers =====",req.body.ateliers)
+            next();
+        }
+    });
+};
+
+//Liste les ateliers dans la page admins
+atelierController.listAdmins = function (req, res) {
     Atelier.find({}).exec(function (err, ateliers) {
         if (err) {
             console.log('Error : ', err);
         } else {
             console.log(ateliers)
-            res.render("../views/atelier/index", { ateliers: ateliers });
+            res.render("../views/atelier/admin", { ateliers: ateliers });
         }
     });
 };
@@ -48,6 +74,17 @@ atelierController.show = function(req, res) {
     });
 };
 
+//Affiche la liste d'un atelier pour l'inscription 
+atelierController.inscription = function(req, res) {
+    Atelier.findOne({_id:req.params.id}).exec(function(err, atelier){
+        if(err){
+            console.log('Error : ', err);
+        }else{
+            res.render("../views/atelier/inscription",{atelier:atelier});
+        } 
+    });
+};
+
 //edition d'une atelier par son id
 atelierController.edit = function(req, res){
     var atelier = new Atelier(req.body);
@@ -70,7 +107,7 @@ atelierController.update = function(req, res){
             console.log(err);
             res.render("../views/atelier/edit",{atelier:req.body} );
         } 
-        res.redirect("/ateliers");
+        res.redirect("/ateliers/admin");
         
     });
 };
