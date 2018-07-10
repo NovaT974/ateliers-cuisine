@@ -64,7 +64,7 @@ atelierController.edit = function(req, res){
 
 //gestion de l'edition d'un atelier
 atelierController.update = function(req, res){
-    Atelier.findByIdAndUpdate(req.params.id,{ $set :{titre: req.body.titre, description: req.body.description, date: req.body.date, horaire: req.body.horaire, duree: req.body.duree, place_disponible: req.body.place_disponible, place_reserve: req.body.place_reserve, prix: req.body.prix, image: req.body.image } },{new: true}, function (err, atelier){
+    Atelier.findByIdAndUpdate(req.params.id,{ $set :{titre: req.body.titre, description: req.body.description, date: req.body.date, horaire: req.body.horaire, duree: req.body.duree, place_disponible: req.body.place_disponible, place_reserve: req.body.place_reserve, prix: req.body.prix, image: req.body.image, active: req.body.active } },{new: true}, function (err, atelier){
 
         if (err){
             console.log(err);

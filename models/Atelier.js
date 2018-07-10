@@ -9,7 +9,8 @@ var AtelierSchema = new mongoose.Schema({
     place_disponible: Number,
     place_reserve: Number,
     prix: Number,
-    image: String
+    image: String,
+    active: String
 });
 
 module.exports = mongoose.model("Atelier", AtelierSchema);
