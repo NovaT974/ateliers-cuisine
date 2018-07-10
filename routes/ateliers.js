@@ -18,6 +18,9 @@ router.post("/save", atelier.save);
 //editer une atelier
 router.get("/edit/:id", atelier.edit);
 
+//editer une inscription pour un atelier
+router.get("/inscription/:id", atelier.inscription);
+
 //voir un machine par son id
 router.get("/show/:id", atelier.show);
 
