@@ -1,31 +1,53 @@
+<% include ../partials/head.ejs %>
 
-<h1>coucou</h1>
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5">
+        <div class="container bg-white">
+            <section class="row animated fadeIn">
+                <div class="col-md-6 mx-auto mt-5 mb-5">
+                    <h1 class="title_page"> 
+                        <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                        <img class="d-block img_title" src="/img/img-title.png" alt="">
+                       Inscription cuisinier
+                    </h1>
+                <!--  <hr> -->
+                </div>    
+            </section>
+        </div>
+        <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+            <div class="row mb-5 animated-1 fadeIn">
+                <div class="col-sm-12 col-md-8 mx-auto mt-5 mb-5 border p-5">
+                    <form action="/cuisiniersSession/save" method="POST">
+                        <div class="form-group">
+                            <label for="cuisiniername">Nom:</label>
+                            <input class="form-control" type="text" class="form-control" name="cuisiniername">
+                        </div>
+                        <div class="form-group">
+                            <label for="cuisiniersurname">Prénom:</label>
+                            <input class="form-control" type="text" class="form-control" name="cuisiniersurname">
+                        </div>
+                        <div class="form-group">
+                            <label for="cuisinieremail">E-mail:</label>
+                            <input class="form-control" type="text" class="form-control" name="cuisinieremail">
+                        </div>
+                        <div class="form-group">
+                            <label for="cuisinierspecial">Spécialité:</label>
+                            <input class="form-control" type="text" class="form-control" name="cuisinierspecial">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mot de passe :</label>
+                            <input class="form-control" type="password" class="form-control" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordConf">Confirmez mot de passe :</label>
+                            <input class="form-control" type="password" class="form-control" name="passwordConfirmation">
+                        </div>
+                        <button class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" class="btn btn-primary">Ajouter</button>
+                    </form> 
+                </div> 
+            </div>       
+        </section>
+    </main>    
 
-<form class= "col-lg-4 m-4" action="/cuisiniersSession/save" method="POST">
-    <h1>S'inscrire</h1>
-        <div class="form-group">
-            <label for="cuisiniername">Nom:</label>
-            <input type="text" class="form-control" name="cuisiniername">
-        </div>
-        <div class="form-group">
-            <label for="cuisiniersurname">Prenom:</label>
-            <input type="text" class="form-control" name="cuisiniersurname">
-        </div>
-        <div class="form-group">
-            <label for="cuisinieremail">e-mail:</label>
-            <input type="text" class="form-control" name="cuisinieremail">
-        </div>
-        <div class="form-group">
-            <label for="cuisinierspecial">spécialité:</label>
-            <input type="text" class="form-control" name="cuisinierspecial">
-        </div>
-        <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" name="password">
-        </div>
-        <div class="form-group">
-            <label for="passwordConf">Confirm password:</label>
-            <input type="password" class="form-control" name="passwordConfirmation">
-            </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form> 
+<% include ../partials/footer.ejs %>                         
