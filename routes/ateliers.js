@@ -7,7 +7,7 @@ var atelier = require("../controllers/AtelierController");
 router.get("/", atelier.list);
 
 //recuperer les ateliers active
-router.get("/admin", atelier.list);
+router.get("/admin", atelier.listAdmins);
 
 //cree un atelier
 router.get("/create", atelier.create);

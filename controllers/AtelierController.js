@@ -4,7 +4,7 @@ var Atelier = require("../models/Atelier");
 
 var atelierController = {};
 
-//Liste les ateliers
+//Liste les ateliers activé
 atelierController.list = function (req, res) {
     Atelier.find({}).exec(function (err, ateliers) {
         if (err) {
@@ -16,8 +16,8 @@ atelierController.list = function (req, res) {
     });
 };
 
-//Liste les ateliers activé dans la page admins
-atelierController.listtest = function (req, res) {
+//Liste les ateliers dans la page admins
+atelierController.listAdmins = function (req, res) {
     Atelier.find({}).exec(function (err, ateliers) {
         if (err) {
             console.log('Error : ', err);
