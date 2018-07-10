@@ -52,7 +52,7 @@ CuisinierController.auth = function (req, res) {
           req.session.userId = user._id;
           req.session.Username = user.username;
           req.session.success = 'Connexion Reussie';
-          res.redirect('../ateliers');
+          res.redirect('../ateliers/admin');
         } else {
           //console.log(req.session.userName);
           res.redirect('/cuisiniersSession');
