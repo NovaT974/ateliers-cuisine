@@ -3,6 +3,18 @@ var router = express.Router();
 
 var atelier = require("../controllers/AtelierController");
 
+//fonction de demande de login pour accès à la page
+// function requireLogin (req, res, next) {
+//     if (req.session && req.session.userId) {
+//         next();
+//     }else {
+//         var err = new Error('error 404');
+//         err.status = 401;
+//         res.redirect('/');
+//     }
+// }
+
+
 //recuperer les ateliers
 // router.get("/", atelier.list);
 
