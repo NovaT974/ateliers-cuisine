@@ -5,13 +5,27 @@ var Atelier = require("../models/Atelier");
 var atelierController = {};
 
 //Liste les ateliers activé
-atelierController.list = function (req, res) {
+// atelierController.list = function (req, res) {
+//     Atelier.find({}).exec(function (err, ateliers) {
+//         if (err) {
+//             console.log('Error : ', err);
+//         } else {
+//             console.log(ateliers)
+//             res.render("../views/atelier/index", { ateliers: ateliers });
+//         }
+//     });
+// };
+
+//Liste les ateliers activé
+atelierController.list = function (req, res, next) {
     Atelier.find({}).exec(function (err, ateliers) {
         if (err) {
             console.log('Error : ', err);
         } else {
-            console.log(ateliers)
-            res.render("../views/atelier/index", { ateliers: ateliers });
+           // console.log(ateliers)
+            req.body.ateliers = ateliers
+           // console.log("req.body.ateliers =====",req.body.ateliers)
+            next();
         }
     });
 };
