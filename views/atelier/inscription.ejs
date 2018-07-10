@@ -1,33 +1,64 @@
-<p>
-    <b>Titre : </b>
-    <%= atelier.titre %>
-</p>
-<p>
-    <b>Description : </b>
-    <%= atelier.description %>
-</p>
-<p>
-    <b>Horaire : </b>
-    <%= atelier.horaire %>
-</p>
-<p>
-    <b>Place disponible : </b>
-    <%= atelier.place_disponible %>
-</p>
+<% include ../partials/head.ejs %>
 
-
-
-<form action="/ateliers/saveInscription" method="POST">
-    Nom:
-    <br>
-    <input type="text" name="firstname">
-    <br> Prenom:
-    <br>
-    <input type="text" name="lastname">
-    <br> Mail:
-    <br>
-    <input type="email" name="email">
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-</form>
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5 bg-white">
+        <div class="container bg-white">
+            <section class="row animated fadeIn">
+                <div class="col-md-6 mx-auto mt-5 mb-5">
+                    <h1 class="title_page"> 
+                        <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                        <img class="d-block img_title" src="/img/img-title.png" alt="">
+                        S'inscrire
+                    </h1>
+                <!--  <hr> -->
+                </div>   
+            </section>
+        </div>
+        <section class="container mb-5 pl-5 pr-5 pb-5 animated fadeIn">
+            <div class=" row">
+                <div class="col-md-6">
+                    <img src="/img/<%= atelier.image %>" class="w-100">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="title_page orange">
+                        <%= atelier.titre %>
+                    </h2>
+                    <p>
+                            <b>Description : </b>
+                            <%= atelier.description %>
+                        </p>
+                        <p>
+                            <b>Horaire : </b>
+                            <%= atelier.horaire %>
+                        </p>
+                        <p>
+                            <b>Place disponible : </b>
+                            <%= atelier.place_disponible %>
+                        </p>
+                </div>
+            </div>                
+        </section>
+        <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+            <div class="row mb-5 border animated-1 fadeIn">
+                <div class="col-sm-12 col-md-8 mx-auto mt-5 mb-5">
+                    <form action="/ateliers/saveInscription" method="POST">
+                        <div class="form-group">
+                        <label for="name">Nom: </label>
+                        <input class="form-control" type="text" name="firstname">
+                        </div>    
+                        <div class="form-group">
+                            <label for="name">Prenom: </label>
+                            <input class="form-control" type="text" name="lastname">
+                        </div>    
+                        <div class="form-group">
+                            <label for="name">Mail: </label>
+                            <input class="form-control" type="email" name="email">
+                        </div>    
+                        <input class="btn btn-primary btn_orange border-0" type="submit" value="S'inscrire">
+                    </form>
+                </div> 
+            </div>       
+          </section>        
+    </main>    
+<% include ../partials/footer.ejs %>          
