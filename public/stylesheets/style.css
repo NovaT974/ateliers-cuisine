@@ -8,6 +8,9 @@ body {
   padding-right: 0;
 }
 
+h4 {
+  font-size: 20px;
+}
 .orange {
   color: #f3671f;
 }
@@ -66,6 +69,22 @@ header {
   font-family: 'Roboto', sans-serif;
 }
 
+.padding_perso {
+  padding-top: 100px;
+}
+/*================================
+        Les boutons personnalisés
+=================================*/
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 .2rem rgba(208, 92, 98,.5);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background-color: #fff;
+  color: #f3671f;
+  border: 2px solid #f3671f!important;
+}
+
 .btn_pink {
   background: #d05c62;
 }
@@ -73,6 +92,8 @@ header {
 .btn_pink:hover {
   background: #f3671f;
 }
+
+
 .title_page {
   font-family: 'Roboto', sans-serif;
 }
@@ -100,9 +121,8 @@ header {
   color: #444;
 }
 
-
 /*=========================
-  Animation page d'accueil
+  Animation du site
 ============================*/  
 
 .animated {

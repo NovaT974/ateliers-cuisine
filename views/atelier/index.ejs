@@ -28,7 +28,7 @@
                     <p><b>Date :</b>
                         <%= ateliers[i].date %>
                     </p>
-                    <p><b>Description :</b>
+                    <!-- <p><b>Description :</b>
                         <%= ateliers[i].description %>
                     </p>
                     <p><b>Horaire :</b>
@@ -44,8 +44,13 @@
                     </p>
                     <p><b>Prix:</b>
                         <%= ateliers[i].prix %>
-                    </p>
+                    </p> -->
+                    <!-- Bouton editer pour cuisinier-->
                     <a  class="btn btn-primary btn_orange border-0" href="/ateliers/edit/<%=ateliers[i]._id %>">Editer</a>
+                    <!-- Bouton voir pour particulier-->
+                    <a  class="btn btn-primary btn_pink border-0" href="/ateliers/show/<%=ateliers[i]._id %>">Voir</a>
+
+                    <!-- faire un if id = cuisnier alors affiche le btn editer sinon affiche btn voir-->
                 </article>
                 <% } %>
             </div> 

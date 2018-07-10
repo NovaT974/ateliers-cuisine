@@ -5,12 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var multer = require('multer');
 
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/cuisine')
+mongoose.connect('mongodb://localhost:27017/cuisine',{ useNewUrlParser: true })
   .then(() =>  console.log('connection succesful'))
 
 var indexRouter = require('./routes/index');
@@ -66,6 +67,62 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// fonction pour l'ajout image
+var storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null,__dirname + "/public/img/")
+  },
+  filename: function(req, file, cb){
+    cb(null,file.originalname);
+  }
+});
+
+// Init Upload
+var upload = multer({
+  storage: storage,
+  limits:{fileSize: 1000000},
+  fileFilter: function(req, file, cb){
+    checkFileType(file, cb);
+  }
+}).single('image2');
+
+// Check File Type
+function checkFileType(file, cb){
+  // Allowed ext
+  var filetypes = /jpeg|jpg|png|gif/;
+  // Check ext
+  var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  // Check mime
+  var mimetype = filetypes.test(file.mimetype);
+
+  if(mimetype && extname){
+    return cb(null,true);
+  } else {
+    cb('Error: Images Only!');
+  }
+}
+
+app.post('/public/img', (req, res) => {
+  upload(req, res, (err) => {
+    if(err){
+      res.render('index', {
+        msg: err
+      });
+    } else {
+      if(req.file == undefined){
+        res.render('index', {
+          msg: 'Error: No File Selected!'
+        });
+      } else {
+        res.render('index', {
+          msg: 'File Uploaded!',
+          file: `uploads/${req.file.filename}`
+        });
+      }
+    }
+  });
 });
 
 module.exports = app;
