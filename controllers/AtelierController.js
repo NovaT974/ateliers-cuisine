@@ -120,7 +120,7 @@ atelierController.saveInscription = function(req, res){
             console.log(err);
             res.render("../views/atelier/edit",{atelier:req.body} );
         } 
-        res.redirect("/ateliers/admin");
+        res.redirect("/");
         
     });
 };

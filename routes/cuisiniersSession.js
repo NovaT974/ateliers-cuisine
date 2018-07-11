@@ -18,7 +18,7 @@ function requireLogin (req, res, next) {
 router.get("/", cuisinier.identification);
 
 // //creer un login
-router.get("/ajoutcuisinier",requireLogin, cuisinier.create);
+router.get("/ajoutcuisinier", cuisinier.create);
 
 //creer un login
 router.post("/save", cuisinier.save);
