@@ -3,21 +3,22 @@ var router = express.Router();
 
 var cuisinier = require("../controllers/CuisinierController");
 
-// function requireLogin (req, res, next) {
-//     if (req.session && req.session.userId) {
-//         next();
-//     }else {
-//         var err = new Error('error 404');
-//         err.status = 401;
-//         res.redirect('/');
-//     }
-// }
+function requireLogin (req, res, next) {
+    if (req.session && req.session.userId) {
+        next();
+    }else {
+        var err = new Error('error 404');
+        err.status = 401;
+        res.redirect('/');
+        console.log('TU N AS PAS LE DROIT !!');
+    }
+}
 
 //renvoi vers inscription et identification cuisinier
 router.get("/", cuisinier.identification);
 
 // //creer un login
-router.get("/ajoutcuisinier", cuisinier.create);
+router.get("/ajoutcuisinier",requireLogin, cuisinier.create);
 
 //creer un login
 router.post("/save", cuisinier.save);
