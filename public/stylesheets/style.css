@@ -34,6 +34,10 @@ h4 {
   height: 80px;
 }
 
+.navbar-brand {
+  font-family: 'Chela One', cursive;
+}
+
 .nav-link {
   font-size: 15px;
 }

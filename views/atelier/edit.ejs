@@ -20,7 +20,7 @@
                             <div class="col-sm-12 col-md-12">
                                 <a class="btn btn-primary btn_pink border-0 text-uppercase" href="/ateliers/admin">Voir la liste des ateliers</a>
                             </div>
-                            <form action="/ateliers/update/<%= atelier._id %>" method="POST" class="mt-5">
+                            <form action="/ateliers/update/<%= atelier._id %>" method="POST" class="mt-5" enctype="multipart/form-data">
                                 <div class="col-sm-12 col-md-12 form-group">
                                     <label>Titre atelier:</label>
                                     <input class="form-control" type="text" name="titre" value="<%= atelier.titre %>" placeholder="titre" />
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="row col-sm-12 col-md-12">
                                     <div class=" col-md-6 col-sm-12 form-group">
-                                        <label> Durée:</label>
+                                        <label> Durée en heure:</label>
                                         <input class="form-control" type="text" name="duree" value="<%= atelier.duree %>" placeholder="duree" />
                                     </div>
                                     <div class="col-md-6 col-sm-12 form-group">
@@ -65,7 +65,8 @@
                                 <div class="row col-sm-12 col-md-12">
                                     <div class=" col-md-6 col-sm-12 form-group">
                                         <label> Image: </label>
-                                        <input class="form-control" type="file" name="image" value="<%= atelier.image %>" placeholder="image" />
+                                        <input class="form-control" type="file" name="image2" id="image2" value="<%= atelier.image %>" placeholder="image" />
+                                        <input class="form-control" type="text" name="image" id="image" value="<%= atelier.image %>" placeholder="image" />
                                     </div>
                                     <div class=" col-md-6 col-sm-12 form-group">
                                         Active:
@@ -76,10 +77,31 @@
                                     <input class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" value="Mettre à jour" />
                                 </div>
                         </div>
-
                         </form>
                     </div>
                     </div>
                 </section>
             </main>
+            <script>
+                // Validation des champs du formulaire via JavaScript
+                (function () {
+                    'use strict';
+                    window.addEventListener('load', function () {
+                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                        var forms = document.getElementsByClassName('needs-validation');
+                        // Loop over them and prevent submission
+                        var validation = Array.prototype.filter.call(forms, function (form) {
+                            form.addEventListener('submit', function (event) {
+                                $('#image').val($('#image2').prop('files')[0].name);
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+    
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
             <% include ../partials/footer.ejs %>
