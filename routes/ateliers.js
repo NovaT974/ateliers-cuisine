@@ -67,7 +67,7 @@ router.post("/save",upload.single('image2'), atelier.save);
 router.get("/edit/:id",requireLogin, atelier.edit);
 
 //editer une inscription pour un atelier
-router.get("/inscription/:id",requireLogin, atelier.inscription);
+router.get("/inscription/:id", atelier.inscription);
 
 //voir un machine par son id
 router.get("/show/:id",requireLogin, atelier.show);
