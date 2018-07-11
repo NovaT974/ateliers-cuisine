@@ -31,9 +31,11 @@ CuisinierController.save = function (req, res) {
       if (err) {
         console.log(err);
         res.render("../views/cuisinier/create");
+        console.log('CHANGE DE NOM');
       } else {
         console.log("login OK");
         res.redirect("/cuisiniersSession");
+        console.log('TA');
       }
     });
   };
