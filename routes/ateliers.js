@@ -24,9 +24,12 @@ router.get("/inscription/:id", atelier.inscription);
 //voir un machine par son id
 router.get("/show/:id", atelier.show);
 
-
 //edit update.  /!\ cest un POST 
 router.post("/update/:id", atelier.update);
+
+
+//edit update pour les place reservé.  /!\ cest un POST 
+router.post("/saveInscription/:id", atelier.saveInscription);
 
 
 module.exports = router;
