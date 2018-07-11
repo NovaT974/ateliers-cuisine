@@ -6,7 +6,7 @@
                         <% for (var i = 0; i<ateliers.length; i++) { %>
                             <% if (ateliers[i].active == "on") { %>
 
-                                <article class="col-md-3 mb-5 pb-3">
+                                <article class="col-md-4 mb-5 pb-3">
                                     <img src="/img/<%= ateliers[i].image %>" class="w-100">
                                     <h3 class="mt-3 pink">Atelier
                                         <%= ateliers[i].titre %>
@@ -20,7 +20,7 @@
                                         <b>Description :</b>
                                         <%= ateliers[i].description %>
                                     </p>
-                                    <p>
+                                    <!--<p>
                                         <b>Horaire :</b>
                                         <%= ateliers[i].horaire %>
                                     </p>
@@ -38,8 +38,8 @@
                                     <p>
                                         <b>Prix:</b>
                                         <%= ateliers[i].prix %>
-                                    </p>
-                                    <a class="btn btn-primary btn_orange border-0" href="/ateliers/inscription/<%=ateliers[i]._id %>">Inscriptions</a>
+                                    </p>-->
+                                    <a class="btn btn-primary btn_orange border-0" href="/ateliers/inscription/<%=ateliers[i]._id %>">S'inscrire</a>
                                 </article>
                                 <% } %>
                                     <% } %>
