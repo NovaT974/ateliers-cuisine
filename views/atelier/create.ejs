@@ -19,7 +19,7 @@
         <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
             <div class="row mb-5 animated-1 fadeIn">
                 <div class="col-sm-12 col-md-12 mx-auto mt-5 mb-5">
-                    <form action="/ateliers/save" method="POST">
+                    <form action="/ateliers/save" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Titre :</label>
                             <input class="form-control" type="text" name="titre" >
@@ -41,7 +41,7 @@
                         </div>
                         <div class="row col-sm-12 col-md-12">
                             <div class="col-md-6 col-sm-12 form-group">
-                                <label>Duree :</label>
+                                <label>Durée en heure :</label>
                                 <input class="form-control" type="number" name="duree" >
                             </div>
                             <div class="col-md-6 col-sm-12 form-group">
@@ -62,7 +62,8 @@
                         <div class="row col-sm-12 col-md-12">      
                             <div class="col-md-6 col-sm-4 form-group"> 
                                 <label>Télécharger une image :</label> 
-                                <input class="form-control border-0" type="file" name="image" >
+                                <input class="form-control" type="file" name="image2" id="image2" value="<%= atelier.image %>" placeholder="image" />
+                                <input class="form-control" type="text" name="image" id="image" value="<%= atelier.image %>" placeholder="image" />
                             </div>
                             <div class="col-md-6 col-sm-12 form-group">     
                                 <input class="btn btn-primary btn_orange border-0 text-uppercase" type="submit" value="Créer">
@@ -73,5 +74,26 @@
             </div>       
         </section>
     </main>    
+    <script>
+        // Validation des champs du formulaire via JavaScript
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        $('#image').val($('#image2').prop('files')[0].name);
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
 
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 <% include ../partials/footer.ejs %>           
