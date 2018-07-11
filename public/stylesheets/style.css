@@ -48,6 +48,10 @@ header {
   box-shadow: 0px 3px 5px 0px rgba(191,187,191,1);
 }
 
+/*========================================
+            caroussel
+==========================================*/
+
 .carousel-inner .carousel-item {
   height: 400px;
 }
@@ -64,10 +68,10 @@ header {
 .bg_opacity {
   background: rgba(255, 255, 255, 0.7);
 }
-/*.img_slide {
+.img_slide {
   width: 200px;
   height: 200px;
-}*/
+}
 .title_slide {
   font-size: 48px;
   font-family: 'Roboto', sans-serif;
@@ -97,6 +101,9 @@ header {
   background: #f3671f;
 }
 
+/*=================================
+          pages internes
+===================================*/
 
 .title_page {
   font-family: 'Roboto', sans-serif;
@@ -116,9 +123,8 @@ header {
   padding: 10px;
 }
 
-.img_ateliers {
-  width: 100%;
-  height: 150px
+.img_atelier {
+  width: 300px;
 }
 
 .link_atelier {
