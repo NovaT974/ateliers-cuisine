@@ -1,37 +1,89 @@
-<p>
-    <b>Titre : </b>
-    <%= atelier.titre %>
-</p>
-<p>
-    <b>Description : </b>
-    <%= atelier.description %>
-</p>
-<p>
-    <b>Horaire : </b>
-    <%= atelier.horaire %>
-</p>
-<p>
-    <b>Place disponible : </b>
-    <%= atelier.place_disponible %>
-</p>
+<% include ../partials/head.ejs %>
 
-
-
-<form action="/ateliers/saveInscription" method="POST">
-    Nom:
-    <br>
-    <input type="text" name="firstname">
-    <br> Prenom:
-    <br>
-    <input type="text" name="lastname">
-    <br> Mail:
-    <br>
-    <input type="email" name="email">
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-</form>
-
-
-<!-- Code visuel à adapter une fois que le décompte fonctionne -->
-
+<body class="bg_page">
+    <% include ../partials/header.ejs %>
+    <main class="container mt-5 bg-white">
+        <div class="container bg-white">
+            <section class="row animated fadeIn">
+                <div class="col-md-6 mx-auto mt-5 mb-5">
+                    <h1 class="title_page"> 
+                        <!--<i class="fas fa-utensils mr-2 icon_title "></i> -->
+                        <img class="d-block img_title" src="/img/img-title.png" alt="">
+                        S'inscrire
+                    </h1>
+                <!--  <hr> -->
+                </div>   
+            </section>
+        </div>
+        <section class="container mb-5 pl-5 pr-5 pb-5 animated fadeIn">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <img src="/img/<%= atelier.image %>" class="w-100">
+                    <h3 class="title_page mt-3 orange">Description</h3>
+                    <p class="mt-2"><%= atelier.description %></p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h2 class="title_page orange mb-3">
+                      Atelier <%= atelier.titre %>
+                    </h2>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="far fa-clock pink"></i>
+                            Horaire : <%= atelier.horaire %>
+                        </h4>
+                        <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="far fa-hourglass pink"></i>
+                            Durée : <%= atelier.duree %>
+                        </h4>
+                        <hr>
+                    </div>    
+                    <div class="mb-1">
+                        <h4>
+                            <i class="fas fa-tag pink"></i>
+                            Places disponibles : <%= atelier.place_disponible %>
+                        </h4>
+                        <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="far fa-check-square pink"></i>
+                            Places réservées : <%= atelier.place_reserve %>
+                        </h4>
+                        <hr>
+                    </div>
+                    <div class="mb-1">
+                        <h4>
+                            <i class="fas fa-money-bill pink"></i>
+                            Prix: <%= atelier.prix %>
+                        </h4>
+                        <hr>
+                    </div> 
+                </div>    
+            </div>                
+        </section>
+        <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
+            <div class="row mb-5 border animated-1 fadeIn">
+                <div class="col-sm-12 col-md-8 mx-auto mt-5 mb-5">
+                    <form action="/ateliers/saveInscription" method="POST">
+                        <div class="form-group">
+                        <label for="name">Nom: </label>
+                        <input class="form-control" type="text" name="firstname">
+                        </div>    
+                        <div class="form-group">
+                            <label for="name">Prenom: </label>
+                            <input class="form-control" type="text" name="lastname">
+                        </div>    
+                        <div class="form-group">
+                            <label for="name">Mail: </label>
+                            <input class="form-control" type="email" name="email">
+                        </div>    
+                        <input class="btn btn-primary btn_orange border-0" type="submit" value="S'inscrire">
+                    </form>
+                </div> 
+            </div>       
+          </section>        
+    </main>    
+<% include ../partials/footer.ejs %>          
