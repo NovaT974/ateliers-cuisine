@@ -67,7 +67,7 @@
         <section class="formulaire container bg-white pl-5 pr-5 pb-5 mb-5">
             <div class="row mb-5 border animated-1 fadeIn">
                 <div class="col-sm-12 col-md-8 mx-auto mt-5 mb-5">
-                    <form action="/ateliers/saveInscription" method="POST">
+                    <form action="/ateliers/saveInscription/<%= atelier._id %>" method="POST">
                         <div class="form-group">
                         <label for="name">Nom: </label>
                         <input class="form-control" type="text" name="firstname">

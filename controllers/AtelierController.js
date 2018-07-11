@@ -112,5 +112,18 @@ atelierController.update = function(req, res){
     });
 };
 
+//gestion de l'edition d'une inscription
+atelierController.saveInscription = function(req, res){
+    Atelier.findByIdAndUpdate(req.params.id,{ $inc :{place_reserve: 1, place_disponible: -1} },{new: true}, function (err, atelier){
+
+        if (err){
+            console.log(err);
+            res.render("../views/atelier/edit",{atelier:req.body} );
+        } 
+        res.redirect("/ateliers/admin");
+        
+    });
+};
+
 //export du module
 module.exports = atelierController;

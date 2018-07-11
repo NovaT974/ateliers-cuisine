@@ -6,7 +6,7 @@ var CuisinierController = {};
 
 
 //Affichier le formulaire d'inscription
-CuisinierController.list = function (req, res) {
+CuisinierController.identification = function (req, res) {
   res.render("../views/cuisinier/index");
 };
 
@@ -63,6 +63,21 @@ CuisinierController.auth = function (req, res) {
       return res.redirect('/cuisiniersSession');
     }
   })
+};
+
+//fonction de déconnection
+CuisinierController.logout = function(req, res){
+  if (req.session){
+      // supprimer la session
+      console.log(req.session);
+      req.session.destroy(function(err){
+          if(!err){
+              res.redirect('/')
+          }else {
+              console.log("error => ", err);
+          }
+      })
+  }
 };
 
 //export du module
