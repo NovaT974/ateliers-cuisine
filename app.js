@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // mongoose.connect('mongodb://localhost:27017/cuisine',{ useNewUrlParser: true })
-mongoose.connect('mongodb://user:PASSWORD974@ds135061.mlab.com:35061/cuisine',{ useNewUrlParser: true })
+mongoose.connect('mongodb://users:lolo974@ds135061.mlab.com:35061/cuisine',{ useNewUrlParser: true })
 
   .then(() =>  console.log('connection succesful'))
 
