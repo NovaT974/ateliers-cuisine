@@ -20,7 +20,7 @@
                             <div class="col-sm-12 col-md-12">
                                 <a class="btn btn-primary btn_pink border-0 text-uppercase" href="/ateliers/admin">Voir la liste des ateliers</a>
                             </div>
-                            <form action="/ateliers/update/<%= atelier._id %>" method="POST" class="mt-5" enctype="multipart/form-data">
+                            <form action="/ateliers/update/<%= atelier._id %>" method="POST" class="mt-5 needs-validation" enctype="multipart/form-data">
                                 <div class="col-sm-12 col-md-12 form-group">
                                     <label>Titre atelier:</label>
                                     <input class="form-control" type="text" name="titre" value="<%= atelier.titre %>" placeholder="titre" />
