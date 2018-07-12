@@ -2,10 +2,14 @@
 
     <body class="bg_page">
         <% include ../partials/header.ejs %>
-        <a href="/cuisiniersSession/logout" class="btn btn-info">Déconnexion</a>
-        <a href="/ateliers/create" class="btn btn-info">Crée un atelier</a>
             <main class="container mt-5">
                 <div class="container bg-white ">
+                    <section class="row">
+                        <div class="col-md-12 text-right mt-3">
+                            <a href="/ateliers/create" class="btn btn-secondary">Crée un atelier</a>
+                            <a href="/cuisiniersSession/logout" class="btn btn-info">Déconnexion</a>
+                        </div>
+                    </section>
                     <section class="row animated fadeIn">
                         <div class="col-md-4 mx-auto mt-5 mb-5">
                             <h1 class="title_page">

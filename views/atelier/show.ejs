@@ -6,6 +6,11 @@
         <div class="container-fluid bg_page padding_perso">
             <section class="container bg-white">
                 <div class="row">
+                    <div class="col-md-12">
+                        <h2>Votre atelier a été créé!</h2>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-8">
                         <img src="/img/<%= atelier.image %>" class="w-100 mt-3">
                     </div>
@@ -16,7 +21,43 @@
                         </h3>
                         <p><b>Date :</b>
                             <%= atelier.date %>
-                        </p>  
+                        </p>
+                        <hr>  
+                        <div class="mb-3">
+                            <h4>
+                                <i class="far fa-clock pink"></i>
+                                Horaire : <%= atelier.horaire %>
+                            </h4>
+                            <hr>
+                        </div>
+                        <div class="mb-3">
+                            <h4>
+                                <i class="far fa-hourglass pink"></i>
+                                durée :  <%= atelier.duree %>
+                            </h4>
+                            <hr>
+                        </div>    
+                        <div class="mb-3">
+                            <h4>
+                                <i class="fas fa-tag pink"></i>
+                                Places disponibles : <%= atelier.place_disponible %>
+                            </h4>
+                            <hr>
+                        </div>
+                        <div class="mb-3">
+                            <h4>
+                                <i class="far fa-check-square pink"></i>
+                                Places réservées : <%= atelier.place_reserve %>
+                            </h4>
+                            <hr>
+                        </div>
+                        <div class="mb-3">
+                            <h4>
+                                <i class="fas fa-money-bill pink"></i>
+                                Prix: <%= atelier.prix %>
+                            </h4>
+                            <hr>
+                        </div>   
                     </div>
                 </div>
             </section>
@@ -26,48 +67,6 @@
                 <div class="col-md-8 col-sm-12 mt-5">
                     <h3 class="orange">Description :</h3>
                     <%= atelier.description %>
-                </div>
-                <div class="col-md-4 col-sm-12 mt-5">
-                    <div class="mb-3">
-                        <h4>
-                            <i class="far fa-clock pink"></i>
-                            Horaire :
-                        </h4>
-                        <%= atelier.horaire %>
-                        <hr>
-                    </div>
-                    <div class="mb-3">
-                        <h4>
-                            <i class="far fa-hourglass pink"></i>
-                            durée :
-                        </h4>
-                        <%= atelier.duree %>
-                        <hr>
-                    </div>    
-                    <div class="mb-3">
-                        <h4>
-                            <i class="fas fa-tag pink"></i>
-                            Places disponibles :
-                        </h4>
-                        <%= atelier.place_disponible %>
-                        <hr>
-                    </div>
-                    <div class="mb-3">
-                        <h4>
-                            <i class="far fa-check-square pink"></i>
-                            Places réservées :
-                        </h4>
-                        <%= atelier.place_reserve %>
-                        <hr>
-                    </div>
-                    <div class="mb-3">
-                        <h4>
-                            <i class="fas fa-money-bill pink"></i>
-                            Prix:
-                        </h4>
-                        <%= atelier.prix %>
-                        <hr>
-                    </div> 
                 </div>
             </div> 
             <div class="col-md-12">
