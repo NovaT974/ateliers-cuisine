@@ -25,7 +25,9 @@ h4 {
 .bg_orange {
   background: #f3671f;
 }
-
+.bg_success {
+  background: #9dc462;
+}
 /*=============================
       HEADER
 ==============================*/
@@ -120,10 +122,16 @@ header {
 
 .img_atelier {
   width: 300px;
+  height: 250px;
 }
 
 .link_atelier {
   color: #444;
+}
+
+.img_inscription {
+  width: 600px;
+  height: 400px;
 }
 
 /*=========================
@@ -213,5 +221,16 @@ header {
   .formulaire {
     padding-left: 1rem!important;
     padding-right: 1rem!important;
+  }
+  .img_inscription {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 690px) and (max-width: 980px) {
+  .img_inscription {
+    width: 400px;
+    height: 220px;
   }
 }
