@@ -25,7 +25,9 @@ h4 {
 .bg_orange {
   background: #f3671f;
 }
-
+.bg_success {
+  background: #9dc462;
+}
 /*=============================
       HEADER
 ==============================*/
