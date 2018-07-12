@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var AtelierSchema = new mongoose.Schema({
     titre: String,
     description: String,
-    date: Date,
+    date: { type: Date, default: Date.now } ,
     horaire: String,
     duree: Number,
     place_disponible: Number,
